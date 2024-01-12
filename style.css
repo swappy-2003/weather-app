@@ -58,4 +58,58 @@ button:hover {
 button:focus {
     outline: none; /* Remove outline on focus */
 }
+#github-link {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+#github-link a {
+    text-decoration: none;
+    color: #be0d0d; /* Dark text color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5; /* Light gray background color */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#github-link a:hover {
+    background-color: #090101; /* Slightly darker gray on hover */
+}
+#linkedin-link {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+#linkedin-link a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #333; /* Dark background color */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#linkedin-link a:hover {
+    background-color: #0f85df; /* Slightly darker background color on hover */
+}
+#email-link {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+#email-link a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #e74c3c; /* Red background color */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#email-link a:hover {
+    background-color: #7c160b; /* Slightly darker red on hover */
+}
 
