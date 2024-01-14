@@ -65,10 +65,9 @@ button:focus {
 
 .weather h2 {
     display: flex;
+    justify-content: center; /* Center the content horizontally */
     align-items: center;
-    margin-bottom: 0;
-    border-left-width: 0px;
-    margin-left: 85vh;
+    margin: 0; /* Reset margin */
 }
 
 #nav {
