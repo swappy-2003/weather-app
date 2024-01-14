@@ -8,7 +8,7 @@ body{
 }
 .card {
     backdrop-filter: blur(10px); /* Apply a blur effect to the card */
-background: linear-gradient(135deg, #ffa8a8, #ffd3b6, #ffedcd, #d3f4d1, #a5f4f3);
+   background: linear-gradient(135deg, #ffa8a8, #ffd3b6, #ffedcd, #d3f4d1, #a5f4f3);
 
 /* Semi-transparent background for the card */
     border-radius: 20px;
