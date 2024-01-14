@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Weather App</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="card">
         <form id="form">
-            <input
-                type="text"
-                id="search"
-                placeholder="Search by location"
-                autocomplete="off"
-            />
+            <input type="text" id="search" placeholder="Search by location" autocomplete="off" />
             <button type="submit">Search</button>
         </form>
-        <main id="main"></main>
-
-        <!-- Add links to your GitHub, LinkedIn, and email -->
-       <!-- GitHub Link -->
-<div id="github-link">
-    <a href="https://github.com/swappy-2003" target="_blank">GitHub</a>
-</div>
-
-<!-- LinkedIn Link -->
-<div id="linkedin-link">
-    <a href="https://www.linkedin.com/in/swapnilkumar-dwivedi-411b261b8/" target="_blank">LinkedIn</a>
-</div>
-
-<!-- Email Link -->
-<div id="email-link">
-    <a href="mailto:dwivediswapnil.123@gmail.com">Email</a>
-</div>
-
-    </body>
+        <main id="main">
+            <div id="time-location">
+                <p id="current-time"></p>
+                <p id="user-location"></p>
+            </main>
+        </div>
+    </div>
+    <div id="nav">
+        <div id="email-link">
+            <a href="mailto:dwivediswapnil.123@gmail.com">Email</a>
+        </div>
+        <div id="github-link">
+            <a href="https://github.com/swappy-2003" target="_self">GitHub</a>
+        </div>
+        <div id="linkedin-link">
+            <a href="https://www.linkedin.com/in/swapnilkumar-dwivedi-411b261b8/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</body>
 </html>
