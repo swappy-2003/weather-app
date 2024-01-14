@@ -55,11 +55,11 @@ async function addWeatherToPage(data) {
 // Helper function to generate a query for Unsplash based on temperature
 function getUnsplashQuery(temperature) {
     if (temperature < 10) {
-        return 'cold';
-    } else if (temperature >= 10 && temperature < 25) {
-        return 'moderate';
+        return 'Cold Weather';
+    } else if (temperature >= 10 && temperature < 15) {
+        return 'Colder Weather';
     } else {
-        return 'warm';
+        return 'Warm Weather';
     }
 }
 
@@ -78,3 +78,58 @@ form.addEventListener("submit", (e) => {
         getWeatherByLocation(city);
     }
 });
+// Function to update current time
+function updateTime() {
+    const currentTimeElement = document.getElementById("current-time");
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+    currentTimeElement.textContent = `Current Time: ${formattedTime}`;
+}
+
+// Function to get user's location using OpenWeatherMap Reverse Geocoding API
+async function getUserLocation() {
+    const userLocationElement = document.getElementById("user-location");
+
+    try {
+        // Get user's current position
+        const position = await getCurrentPosition();
+
+        // Use OpenWeatherMap Reverse Geocoding API
+        const apiUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&limit=1&appid=${apikey}`;
+        
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data.length > 0) {
+            const placeName = data[0].name;
+            userLocationElement.textContent = `Hello User from : ${placeName}`;
+        } else {
+            userLocationElement.textContent = "Location not found";
+        }
+    } catch (error) {
+        console.error("Error fetching location:", error.message);
+        userLocationElement.textContent = "Unable to retrieve location.";
+    }
+}
+
+// Function to get current position using the Geolocation API
+function getCurrentPosition() {
+    return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+}
+
+// Call function to get user location
+getUserLocation();
+
+
+
+// Call functions to update time and location
+updateTime();
+
+
+// Update time every minute
+setInterval(updateTime, 60000);
+
